@@ -7,7 +7,7 @@ import java.util.Set;
 public class Kitchen {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Scanner in = new Scanner(System.in);
 		Set<String> set = new HashSet<String>();
 		while(in.hasNext()) {
