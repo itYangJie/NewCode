@@ -15,6 +15,6 @@ public class ElegantPoint {
 				count++;
 		}
 		System.out.println(count*4);
-    }
+	}
 
 }
