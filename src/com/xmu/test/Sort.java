@@ -6,11 +6,11 @@ public class Sort {
 
 	public static void main(String[] args) {
 		int[] nums1 = {1};
-		mergeSort(nums1,0,nums1.length-1);
+		heapSort(nums1);
 		System.out.println(Arrays.toString(nums1));
 		
 		int[] nums2 = {-1,-10,5,3,1,6,1,-10,6,5,2,12,1};
-		mergeSort(nums2,0,nums2.length-1);
+		heapSort(nums2);
 		System.out.println(Arrays.toString(nums2));
 	}
 	private static void bubbleSort(int[] nums) {
@@ -97,5 +97,32 @@ public class Sort {
 		}
 		for(int i=left;i<=right;i++)
 			nums[i] = temp[i-left];
+	}
+	private static void heapSort(int[] nums) {
+		if(nums.length<=1)
+			return;
+		for(int i=(nums.length-1)/2;i>=0;i--)
+			adjust(nums,i,nums.length);
+		int size = nums.length;
+		for(int i=nums.length-1;i>0;i--) {
+			int temp = nums[i];
+			nums[i] = nums[0];
+			nums[0] = temp;
+			adjust(nums,0,--size);
+		}
+	}
+	private static void adjust(int[] nums, int parent,int size) {
+		int left = 2*parent+1,right = 2*parent+2;
+		int swapInd = parent;
+		if(left<size && nums[swapInd]<nums[left])
+			swapInd = left;
+		if(right<size && nums[swapInd]<nums[right])
+			swapInd = right;
+		if(swapInd==parent)
+			return;
+		int temp = nums[swapInd];
+		nums[swapInd] = nums[parent];
+		nums[parent] = temp;
+		adjust(nums, swapInd,size);
 	}
 }
