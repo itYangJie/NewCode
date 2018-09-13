@@ -1,17 +1,57 @@
 package com.xmu.test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Sort {
 
 	public static void main(String[] args) {
-		int[] nums1 = {1};
-		heapSort(nums1);
-		System.out.println(Arrays.toString(nums1));
+		int n = 100000;
+		int n_shuffle = 100000;
+		int[] nums1 = generateNums(n, n_shuffle);
+		int[] nums2 =nums1.clone();
+		int[] nums3 =nums1.clone();
+		int[] nums4 =nums1.clone();
+		int[] nums5 =nums1.clone();
+		int[] nums6 =nums1.clone();
 		
-		int[] nums2 = {-1,-10,5,3,1,6,1,-10,6,5,2,12,1};
-		heapSort(nums2);
-		System.out.println(Arrays.toString(nums2));
+		long curTime = System.currentTimeMillis();
+		quickSort(nums4,0,nums4.length-1);
+		System.out.println("quickSort:"+(System.currentTimeMillis()-curTime));
+		
+		curTime = System.currentTimeMillis();
+		mergeSort(nums5,0,nums5.length-1);
+		System.out.println("mergeSort:"+(System.currentTimeMillis()-curTime));
+		
+		curTime = System.currentTimeMillis();
+		heapSort(nums6);
+		System.out.println("heapSort:"+(System.currentTimeMillis()-curTime));
+		
+		curTime = System.currentTimeMillis();
+		bubbleSort(nums1);
+		System.out.println("bubbleSort:"+(System.currentTimeMillis()-curTime));
+		
+		curTime = System.currentTimeMillis();
+		selectSort(nums2);
+		System.out.println("selectSort:"+(System.currentTimeMillis()-curTime));
+		
+		curTime = System.currentTimeMillis();
+		insertSort(nums3);
+		System.out.println("insertSort:"+(System.currentTimeMillis()-curTime));
+	}
+	private static int[] generateNums(int n, int n_shuffle) {
+		int[] nums = new int[n];
+		for(int i=0;i<n;i++)
+			nums[i] = i+1;
+		Random r = new Random();
+		for(int i=0;i<n_shuffle;i++) {
+			int ind1 = r.nextInt(n);
+			int ind2 = r.nextInt(n);
+			int temp = nums[ind1];
+			nums[ind1] = nums[ind2];
+			nums[ind2] = temp;
+		}
+		return nums;
 	}
 	private static void bubbleSort(int[] nums) {
 		if(nums.length<=1)
