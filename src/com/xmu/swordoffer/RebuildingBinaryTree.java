@@ -23,11 +23,5 @@ public class RebuildingBinaryTree {
 		  node.right = solve(pre,preL+leftNum+1,preR,in,inL+leftNum+1 ,inR);
 		  return node;
 	}
-	public class TreeNode {
-	      int val;
-	      TreeNode left;
-	      TreeNode right;
-	      TreeNode(int x) { val = x; }
-	  }
 	 
 }

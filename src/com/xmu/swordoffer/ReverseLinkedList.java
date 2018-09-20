@@ -23,12 +23,4 @@ public class ReverseLinkedList {
 		return node2;
 	}
 
-	class ListNode {
-		int val;
-		ListNode next = null;
-
-		ListNode(int val) {
-			this.val = val;
-		}
-	}
 }

@@ -1,7 +1,5 @@
 package com.xmu.swordoffer;
 
-
-
 import java.util.ArrayList;
 public class PrintLinkedList {
 
@@ -29,11 +27,3 @@ public class PrintLinkedList {
 	}
 }
 
-class ListNode {
-    int val;
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}

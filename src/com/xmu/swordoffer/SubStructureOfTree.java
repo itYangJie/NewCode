@@ -18,14 +18,4 @@ public class SubStructureOfTree {
 			return false;
 		return solve(root1.left,root2.left) && solve(root1.right,root2.right);
 	}
-	class TreeNode {
-		int val = 0;
-		TreeNode left = null;
-		TreeNode right = null;
-
-		public TreeNode(int val) {
-			this.val = val;
-
-		}
-	}
 }

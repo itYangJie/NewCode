@@ -28,12 +28,4 @@ public class mergeTwoLinkedList {
 		return font.next;
 	}
 
-	class ListNode {
-		int val;
-		ListNode next = null;
-
-		ListNode(int val) {
-			this.val = val;
-		}
-	}
 }
