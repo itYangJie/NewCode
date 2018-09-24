@@ -2,7 +2,7 @@ package com.xmu.swordoffer;
 
 import java.awt.List;
 
-public class mergeTwoLinkedList {
+public class MergeTwoLinkedList {
 	
 	public ListNode Merge(ListNode list1, ListNode list2) {
 		if(list1==null)
