@@ -17,6 +17,7 @@ public class KeywordDetect {
 		Map<String,int[]> map = new HashMap<>();
 		for(int i=0;i<n;i++) {
 			String s = A[i];
+			
 			for(int j=0;j<m;j++) {
 				String pattern = keys[j];
 				int next[];
